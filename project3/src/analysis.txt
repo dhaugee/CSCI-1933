@@ -1,0 +1,8 @@
+    Method                 ArrayList Runtime           LinkedList Runtime                        Explanation
+boolean add(T element)          O(n)                         O(1)                     Array:if cases for when index is out of bounds and if the array is full,
+                                                                                        when array is full, for loop to copy the array and double the capacity.
+                                                                                        LinkedList is faster because the time complexity is O(1)
+boolean pairSwap()              O(n)                         O(n)                     Array:single for loop to swap, iterating by pairs. LinkedList has one while loop. Both are similar in time complexity
+merge(List<T>otherList)         O(n)                         O(n)                       Array: nested for loop to copy from original and otherList. LinkedList may be faster because add function is O(1)
+reverse() method                O(n)                         O(n)                  Array: single for loop to swap from each of the ends of the array,
+                                                                                        ending in the middle. Both methods would work because the time complexities are the same
