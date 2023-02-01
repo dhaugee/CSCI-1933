@@ -1,0 +1,73 @@
+1.
+a. I would think that hash2 would work better, as it iterates through each character
+    in the word and raises it to the power of its placement. hash1 only uses the first
+    and last character of a word. for hash1, the words "caption" and "collision" will
+    cause a collision.
+b.
+    1. O(1): the hash function is an equation, and the adding method needs not to loop,
+        but to just find the correct bucket
+    2. As a hash table is just an implementation of an array, and we assume Ronald's
+        hash table has no collisions, we can just use an array sorting method. Bubble
+        sorting should be avoided because it doesn't work well on large data sets, so
+        either insertion or selection could work.
+    3. O(n^2)
+
+2.
+a.
+    1. The left branch will always be checked before the right branch; the prefix before
+        "order" is in reference to when the root is traversed. Preorder traversal of the
+        given tree would output 1, 2, 4, 5, 3. Inorder traversal: 4, 2, 5, 1, 3.
+        Postorder traversal: 4, 5, 2, 3, 1.
+    2. The first method has no counter, so no way of keeping track of the number of nodes
+        in the tree. The second method adds each node to a queue and then counts each item
+        in the queue, so it should produce the right number.
+b. A binary tree does not have to ordered, but a binary search tree has to be. A binary
+    search tree is always a binary tree, but not vice versa.
+c.
+    public static int search(String[] a, int first, int last, String target) {
+        int mid = (first + last) / 2;
+        if ( a[mid] == target) {
+            return mid;
+        }
+        else if ( a[mid] > target) {
+            return search(a, first, mid, target);
+        }
+        else {
+            return search(a, mid, last, target);
+        }
+    }
+
+3. No, yes, yes. Better sorting the array would not affect its O(nlogn) time complexity,
+    as it will execute the same steps
+
+4.
+    1. Searching a hashtable will have an average time complexity of O(1), while binary
+        trees (search trees included) will have time complexities of O(n).
+    2. The time complexity of the search would increase to O(n), because at every index,
+        you'd have to loop through, on average, n elements. The add element would still
+        work at O(1) if you weren't concerned with duplicates; you'd just add to the head of
+        the linked list at a given index.
+
+5.
+a.
+    1. Big-O notation helps define the time complexity and/or space complexity for an algorithm
+        given the problem size n. Its limitations include the exclusion of constants, no indicator
+        of the algorithm's efficiency, and the fact that some algorithms are too complex to be
+        properly described by the notation.
+    2. Stacks operate under a "last in first out" system, where elements are both added and removed
+        from the top. Queues operate like actual queues, where items are added to the bottom and
+        removed from the top, and because of this, have pointers for the front and rear, whereas
+        stacks only need one, at the front.
+    3. A good example of using a stack versus using a queue is in the case of Depth First Search vs.
+        Breadth First Search, respectively. These search methods can be implemented in a variety of
+        cases, such as writing a program to solve a maze, like we did for a project.
+b. See Palindrome.java
+c.
+    Queue<String> characters = new LinkedList<>() Front = null Back = null
+    characters.add(”Crush”) Front = "Crush" Back = "Crush"
+    characters.add(”Dory”) Front = "Crush" Back = "Dory"
+    characters.remove() Front = "Dory" Back = "Dory"
+    characters.add(”Nemo”) Front = "Dory" Back = "Nemo"
+    character.add(”Marlin”) Front = "Dory" Back = "Marlin"
+    character.add(”Gill”) Front = "Dory" Back = "Gill"
+
